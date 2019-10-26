@@ -1,0 +1,20 @@
+{
+  "name": "node-cluster-test",
+  "version": "1.0.0",
+  "description": "i'm trying cluster node",
+  "main": "cluster.js",
+  "scripts": {
+    "dev": "nodemon cluster.js",
+    "test": "test",
+    "start": "node cluster.js"
+  },
+  "keywords": [
+    "node",
+    "jest"
+  ],
+  "author": "Nikolay Boldar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
