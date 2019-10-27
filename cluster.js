@@ -1,5 +1,6 @@
 const cluster = require('cluster');
 const os = require('os');
+
 const createWorker = (cluster) => {
     const worker = cluster.fork();
     console.log(`Worker created, it's pid:${worker.process.pid}`);

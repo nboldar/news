@@ -1,5 +1,5 @@
 const https = require('https');
-const parser = require('./parser');
+const parseXML = require('./parser');
 
 module.exports = () => {
     return new Promise((resolve, reject) => {
@@ -22,7 +22,7 @@ module.exports = () => {
                 rawData += chunk;
             });
             res.on('end', () => {
-                resolve(parser(rawData));
+                resolve(parseXML(rawData));
             });
         });
         req.on('error', error => {
