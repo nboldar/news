@@ -10,6 +10,10 @@ const createWorker = (cluster) => {
     });
 };
 
+cluster.setupMaster({
+    exec: "./server.js"
+});
+
 if (cluster.isMaster) {
     let i = os.cpus().length;
     console.log(`Master started. CPU num is ${i}`);
@@ -18,6 +22,4 @@ if (cluster.isMaster) {
         i--;
     }
 }
-if (cluster.isWorker) {
-    require('./server');
-}
+module.exports = cluster;
