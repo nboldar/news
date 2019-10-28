@@ -11,8 +11,10 @@ describe('Test the root path', () => {
         expect(response.headers['content-type']).toBe('application/json');
 
     });
-    afterAll(() => {
-       app.close()
+    //TODO-me find way to stop process after all tests, server still stands after tests done and i have to stop
+    // it by press CTRL+C
+    afterAll(async () => {
+      await app.close()
     });
 });
 

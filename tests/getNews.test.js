@@ -1,6 +1,6 @@
 const getNews = require('../getNews');
 
-test('get response from google news url', () => {
+test('get response in proper format from google news url', () => {
     return getNews().then(data => {
         expect(typeof data==='string').toBeTruthy();
     });

@@ -15,17 +15,17 @@ const testRegExp2 = [
     '123-+._<name><title>right value</title></name>?!ABC*()',
 ];
 testArray.forEach(value => {
-    test(`returning array with value: ${value}`, () => {
+    test(`Parser should always return array when input value: ${value}`, () => {
         expect(Array.isArray(parseXML(value))).toBeTruthy();
     });
 });
 testRegExp.forEach((value,idx) => {
-    test(`Right RegExp(get values) for item ${idx}`, () => {
+    test(`Right RegExp(when we have to get values) for item ${idx}`, () => {
         expect(parseXML(value)).toContain('right value');
     });
 });
 testRegExp2.forEach((value,idx) => {
-    test(`Right RegExp(not get values) for item ${idx}`, () => {
+    test(`Right RegExp(when we don't have to get values) for item ${idx}`, () => {
         expect(parseXML(value)).not.toContain('right value');
     });
 });

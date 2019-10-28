@@ -6,6 +6,6 @@ test('workers number should be equal CPU num', async ()=>{
     expect(keys.length).toBe(os.cpus().length);
 });
 
-afterAll(async () => {
-   await cluster.disconnect();
+afterAll( () => {
+    cluster.disconnect();
 });

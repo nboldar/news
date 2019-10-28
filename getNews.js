@@ -12,8 +12,8 @@ module.exports = () => {
 
             if (error) {
                 console.error(error.message);
-                reject(error);
                 res.resume();
+                reject(error);
             }
 
             let rawData = '';
@@ -25,8 +25,8 @@ module.exports = () => {
             });
         });
         req.on('error', error => {
+            console.error(error);
             reject(error);
-            console.error(error)
         });
 
     });
